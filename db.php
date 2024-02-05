@@ -103,8 +103,11 @@ class TipoProdotto extends Prodotti {
 
 }
 
-$prodotto1 = new TipoProdotto('Collarino', 25, 'img1', 'Accessorio', $cane);
+$prodotto1 = new TipoProdotto('Collarino', 25, 'img1', 'Accessorio', $gatto);
 $prodotto2 = new TipoProdotto('Scatoletta manzo', 10, 'img2', 'Cibo', $gatto);
+$prodotto3 = new TipoProdotto('Cuccia', 100, 'img3', 'Comfort', $cane);
+$prodotto4 = new TipoProdotto('Osso', 10, 'img2', 'Gioco', $cane);
+
 
 echo $prodotto1 -> getTipologia();
 
