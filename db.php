@@ -109,14 +109,14 @@ $prodotto3 = new TipoProdotto('Cuccia', 100, 'img3', 'Comfort', $cane);
 $prodotto4 = new TipoProdotto('Osso', 10, 'img2', 'Gioco', $cane);
 
 
-echo $prodotto1 -> getTipologia();
+// echo $prodotto1 -> getTipologia();
 
-echo '<br>';
-echo '<br>';
+// echo '<br>';
+// echo '<br>';
 
-echo $prodotto1 -> getCategoria() -> getNome();
+// echo $prodotto1 -> getCategoria() -> getNome();
 
-echo '<br>';
-echo '<br>';
+// echo '<br>';
+// echo '<br>';
 
-echo 'ciaoo';
+// echo 'ciaoo';
