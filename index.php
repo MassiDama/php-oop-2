@@ -28,6 +28,8 @@
                 echo '<br>';
                 echo $prodotto -> getCategoria() -> getNome(); 
                 echo $prodotto -> getCategoria() -> getIcona(); 
+                echo '<br>';
+                echo $prodotto -> verificaDisponibilita();
             ?>
         </li>
 

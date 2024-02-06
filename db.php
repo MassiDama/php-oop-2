@@ -1,5 +1,27 @@
 <?php
 
+
+trait GestioneDisponibilita {
+    private $disponibile = true;
+
+    public function getDisponibilita() {
+        return $this->disponibile;
+    }
+
+    public function setDisponibilita($disponibile) {
+        $this->disponibile = $disponibile;
+    }
+
+    public function verificaDisponibilita() {
+        if ($this->getDisponibilita()) {
+            echo $this->getTitolo() . " è disponibile per l'acquisto.<br>";
+        } else {
+            echo $this->getTitolo() . " non è disponibile per l'acquisto al momento.<br>";
+        }
+    }
+}
+
+
 class Prodotti {
     private $titolo;
     private $prezzo;
@@ -87,6 +109,9 @@ $gatto = new Categoria('gatto' , '😼');
 
 //es accessori, cibo, cucce, giochi ecc..
 class TipoProdotto extends Prodotti {
+
+    use GestioneDisponibilita;
+
     private $tipologia;
 
     public function __construct($titolo, $prezzo, $immagine, $tipologia, Categoria $categoria) {
@@ -122,6 +147,9 @@ $prodotto4 = new TipoProdotto('Osso', 10, 'img2', 'Gioco', $cane);
 
     echo "Errore nell'inserimento del prezzo: " . $e -> getMessage();
 }
+
+
+$prodotto1 -> setDisponibilita(false);
 
 
 // echo $prodotto1 -> getTipologia();
