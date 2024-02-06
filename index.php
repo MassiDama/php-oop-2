@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <?php
-        require_once("db.php");
-    ?>
+    <?php require_once("db.php"); ?>
 
 </head>    
 <body>
@@ -16,9 +14,8 @@
 
     <ul> <h3>Prodotto:</h3>
 
-    <?php
-    foreach([$prodotto1, $prodotto2, $prodotto3, $prodotto4] as $prodotto) { 
-    ?>
+    <?php foreach([$prodotto1, $prodotto2, $prodotto3, $prodotto4] as $prodotto) { ?>
+
         <li>
             <?php 
                 echo $prodotto -> getTitolo();
@@ -33,10 +30,10 @@
                 echo $prodotto -> getCategoria() -> getIcona(); 
             ?>
         </li>
+
         <br>
-    <?php
-    }
-    ?>
+
+    <?php } ?>
     </ul>
 </body>
 </html>
