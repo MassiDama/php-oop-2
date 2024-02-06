@@ -27,6 +27,10 @@ class Prodotti {
     }
 
     public function setPrezzo($prezzo) {
+
+        if (!is_numeric($prezzo))
+            throw new Exception("$prezzo is not a valid (numeric) price");
+
         $this -> prezzo = $prezzo;
     }
 
@@ -103,10 +107,18 @@ class TipoProdotto extends Prodotti {
 
 }
 
-$prodotto1 = new TipoProdotto('Collarino', 25, 'img1', 'Accessorio', $gatto);
+try {
+    
+$prodotto1 = new TipoProdotto('Collarino', 'ciao', 'img1', 'Accessorio', $gatto);
 $prodotto2 = new TipoProdotto('Scatoletta manzo', 10, 'img2', 'Cibo', $gatto);
 $prodotto3 = new TipoProdotto('Cuccia', 100, 'img3', 'Comfort', $cane);
 $prodotto4 = new TipoProdotto('Osso', 10, 'img2', 'Gioco', $cane);
+
+
+} catch (Exception $e) {
+
+    echo "Errore nell'inserimento del prezzo: " . $e -> getMessage();
+}
 
 
 // echo $prodotto1 -> getTipologia();
